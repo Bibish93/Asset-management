@@ -1,4 +1,6 @@
-const sequelize = require('sequelize')
+const {Sequelize, DataTypes} = require('sequelize');
+
+
 
 module.exports = (sequelize, DataTypes) => {
     const Assets = sequelize.define('Assets', {
@@ -9,10 +11,28 @@ module.exports = (sequelize, DataTypes) => {
         datePurchased: DataTypes.DATEONLY,
         quantity: DataTypes.INTEGER,
         cost: DataTypes.STRING,
-        assignedID: DataTypes.STRING, 
-        image: DataTypes.BLOB
-    })
 
-    return Assets;
+        image: DataTypes.BLOB,
+
+      
+    }) 
+
+    
+    Assets.associate = (models) => {
+        Assets.hasOne(models.Users, {
+
+            onDelete: "cascade",
+        })
+    }
+
+    return Assets;  
 }
+ 
 
+
+     
+    
+
+
+ 
+  

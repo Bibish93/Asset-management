@@ -1,7 +1,6 @@
 const sequelize = require('sequelize')
-
 module.exports = (sequelize, DataTypes) => {
-    const Assets = sequelize.define('Users', {
+    const Users = sequelize.define('Users', {
         firstname: DataTypes.STRING,
         middlename: DataTypes.STRING,
         lastname: DataTypes.STRING,
@@ -12,11 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         password: DataTypes.STRING,
         department: DataTypes.STRING,
         room: DataTypes.INTEGER,
-
+       
 
         
     })
 
-    return Assets;
+    return Users;
 }
-

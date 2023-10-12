@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const {models: { Employees } } = require('../models')
+// import bcrypt from('bcrypt')
 // const  Employees  = require('../models/Employees')(sequelize, DataTypes); 
 // const  Employees  = require('../models/Employees').Employees; 
 
@@ -12,7 +13,15 @@ router.get('/', async (req, res) => {
 })
 router.post('/', async(req, res)=>{
     const employee = req.body
+    const password = req.body.password
     await Employees.create(employee)
+    // bcrypt.hash(password, 10).then((hash) => {
+    //     await Employees.create({
+    //         ...employee,
+    //         password: hash
+    //     })
+        
+    // })
     res.json(employee)
 
     

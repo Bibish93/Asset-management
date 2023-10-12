@@ -1,5 +1,5 @@
 module.exports = {
-    HOST: 'root@localhost' ,
+    HOST: 'localhost' ,
     USER: 'root',
     PASSWORD: '',
     DATABASE: 'AssetGuard',
